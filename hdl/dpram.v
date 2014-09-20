@@ -53,4 +53,12 @@ module dpram (
         b_port_data_OUT <= Memory[b_port_ADDR];
     end
 
-endmodule
+endmodule    input clK;
+    
+    // in fifo
+    input  wire              fifo_WR;
+    input  wire [DATA-1:0]   fifo_IN;
+    
+    // out fifo
+    input  wire              fifo_RD;
+    output wire [DATA-1:0]   fifo_OUT;
