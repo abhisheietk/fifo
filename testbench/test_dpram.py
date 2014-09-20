@@ -27,7 +27,7 @@ def read_ram(dut, address):
 
 
 @cocotb.test()
-def test_ram(dut):
+def test_dpram(dut):
     """Try writing values into the RAM and reading back"""
     RAM = {}
     
