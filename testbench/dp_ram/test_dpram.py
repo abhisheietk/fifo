@@ -20,7 +20,7 @@ def write_ram(dut, address, value):
 def read_ram(dut, address):
     """This coroutine performs a read of the RAM and returns a value"""
     yield RisingEdge(dut.clK)               # Synchronise to the read clock
-    dut.a_port_ADDR = address                   # Drive the value onto the signal
+    dut.a_port_ADDR = address               # Drive the value onto the signal
     yield RisingEdge(dut.clK)               # Wait for 1 clock cycle
     yield ReadOnly()                             # Wait until all events have executed for this timestep
     raise ReturnValue(int(dut.a_port_data_OUT.value))  # Read back the value
@@ -47,6 +47,7 @@ def test_dpram(dut):
     dut.log.info("Reading back values and checking")
     for i in xrange(depth):
         value = yield read_ram(dut, i)
+        print value, RAM[i]
         if value != RAM[i]:
             dut.log.error("RAM[%d] expected %d but got %d" % (i, RAM[i], dut.a_port_data_OUT.value.value))
             raise TestFailure("RAM contents incorrect")

@@ -5,17 +5,18 @@ PYTHONPATH=/home/abhishek/2014_devel/EDA/cocotb/build/libs/x86_64:/home/abhishek
         vvp -M /home/abhishek/2014_devel/EDA/cocotb/build/libs/x86_64 -m gpivpi sim_build/sim.vvp   
      0.00ns INFO     cocotb.gpi                                  gpi_embed.c:205  in embed_sim_init                  Running on Icarus Verilog version 0.9.7 
      0.00ns INFO     cocotb.gpi                                  gpi_embed.c:206  in embed_sim_init                  Python interpreter initialised and cocotb loaded!
-     0.00ns INFO     cocotb.gpi                                  __init__.py:101  in _initialise_testbench           Seeding Python random module with 1411198091
+     0.00ns INFO     cocotb.gpi                                  __init__.py:101  in _initialise_testbench           Seeding Python random module with 1411198208
      0.00ns INFO     cocotb.gpi                                  __init__.py:115  in _initialise_testbench           Running tests with Cocotb v0.5 from /home/abhishek/2014_devel/EDA/cocotb
      0.00ns INFO     cocotb.regression                         regression.py:123  in initialise                      Found test test_dpram.test_dpram
      0.00ns INFO     cocotb.regression                         regression.py:194  in execute                         [44m[30mRunning test 1/1:[39m[49m test_dpram
-     0.00ns INFO     ..routine.test_dpram.0x7fa344fa68d0       decorators.py:176  in send                            Starting test: "test_dpram"
+     0.00ns INFO     ..routine.test_dpram.0x7f8be85cd8d0       decorators.py:176  in send                            Starting test: "test_dpram"
                                                                                                                      Description: Try writing values into the RAM and reading back
      0.00ns INFO     cocotb.dpram                              test_dpram.py:37   in test_dpram                      Found 32 entry RAM by 16 bits wide
      0.00ns INFO     cocotb.dpram                              test_dpram.py:42   in test_dpram                      Writing in random values
    201.60ns INFO     cocotb.dpram                              test_dpram.py:47   in test_dpram                      Reading back values and checking
-   208.00ns ERROR    cocotb.dpram                              test_dpram.py:51   in test_dpram                      RAM[0] expected 57784 but got 0
-   208.00ns WARNING  ..routine.test_dpram.0x7fa344fa68d0       decorators.py:185  in send                            RAM contents incorrect
+0 25016
+   208.00ns ERROR    cocotb.dpram                              test_dpram.py:52   in test_dpram                      RAM[0] expected 25016 but got 0
+   208.00ns WARNING  ..routine.test_dpram.0x7f8be85cd8d0       decorators.py:185  in send                            RAM contents incorrect
    208.00ns ERROR    cocotb.regression                         regression.py:180  in handle_result                   Test Failed: test_dpram (result was TestFailure)
    208.00ns ERROR    cocotb.regression                         regression.py:129  in tear_down                       Failed 1 out of 1 tests (0 skipped)
    208.00ns INFO     cocotb.regression                         regression.py:133  in tear_down                       Shutting down...
