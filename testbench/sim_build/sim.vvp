@@ -1,0 +1,49 @@
+#! /usr/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x1cddf40 .scope module, "ram" "ram" 2 6;
+ .timescale 0 0;
+P_0x1cde038 .param/l "A_WIDTH" 2 11, +C4<0101>;
+P_0x1cde060 .param/l "D_WIDTH" 2 10, +C4<010000>;
+v0x1cde150_0 .net "address_read", 4 0, C4<zzzzz>; 0 drivers
+v0x1cee4e0_0 .net "address_write", 4 0, C4<zzzzz>; 0 drivers
+v0x1cee580_0 .net "clk_read", 0 0, C4<z>; 0 drivers
+v0x1cee620_0 .net "clk_write", 0 0, C4<z>; 0 drivers
+v0x1cee6d0_0 .var "data_read", 15 0;
+v0x1cee770_0 .net "data_write", 15 0, C4<zzzzzzzzzzzzzzzz>; 0 drivers
+v0x1cee850 .array "memory", 31 0, 15 0;
+v0x1cee8d0_0 .net "write_enable", 0 0, C4<z>; 0 drivers
+E_0x1cde0b0 .event posedge, v0x1cee580_0;
+E_0x1cde100 .event posedge, v0x1cee620_0;
+    .scope S_0x1cddf40;
+T_0 ;
+    %wait E_0x1cde100;
+    %load/v 8, v0x1cee8d0_0, 1;
+    %jmp/0xz  T_0.0, 8;
+    %load/v 8, v0x1cee770_0, 16;
+    %ix/getv 3, v0x1cee4e0_0;
+    %jmp/1 t_0, 4;
+    %ix/load 0, 16, 0; word width
+    %ix/load 1, 0, 0; part off
+    %assign/av v0x1cee850, 0, 8;
+t_0 ;
+T_0.0 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_0x1cddf40;
+T_1 ;
+    %wait E_0x1cde0b0;
+    %ix/getv 3, v0x1cde150_0;
+    %load/av 8, v0x1cee850, 16;
+    %ix/load 0, 16, 0;
+    %assign/v0 v0x1cee6d0_0, 0, 8;
+    %jmp T_1;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "/home/abhishek/2014_devel/EDA/fifo/testbench/../hdl/ram.v";
