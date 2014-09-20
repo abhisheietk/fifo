@@ -1,10 +1,55 @@
 make results.xml
 make[1]: Entering directory '/home/abhishek/2014_devel/EDA/fifo/testbench/dp_ram'
 iverilog -o sim_build/sim.vvp -D COCOTB_SIM=1   /home/abhishek/2014_devel/EDA/fifo/testbench/dp_ram/../../hdl/dpram.v
-/home/abhishek/2014_devel/EDA/fifo/testbench/dp_ram/../../hdl/dpram.v:32: error: Unable to bind wire/reg/memory `test' in `dpram'
-1 error(s) during elaboration.
-/home/abhishek/2014_devel/EDA/cocotb/makefiles/simulators/Makefile.icarus:32: recipe for target 'sim_build/sim.vvp' failed
-make[1]: *** [sim_build/sim.vvp] Error 1
+PYTHONPATH=/home/abhishek/2014_devel/EDA/cocotb/build/libs/x86_64:/home/abhishek/2014_devel/EDA/cocotb:/home/abhishek/2014_devel/EDA/fifo/testbench/dp_ram: LD_LIBRARY_PATH=/home/abhishek/2014_devel/EDA/cocotb/build/libs/x86_64: MODULE=test_dpram  \
+        TESTCASE= TOPLEVEL=dpram \
+        vvp -M /home/abhishek/2014_devel/EDA/cocotb/build/libs/x86_64 -m gpivpi sim_build/sim.vvp -lxt2  
+     0.00ns INFO     cocotb.gpi                                  gpi_embed.c:205  in embed_sim_init                  Running on Icarus Verilog version 0.9.7 
+     0.00ns INFO     cocotb.gpi                                  gpi_embed.c:206  in embed_sim_init                  Python interpreter initialised and cocotb loaded!
+     0.00ns INFO     cocotb.gpi                                  __init__.py:101  in _initialise_testbench           Seeding Python random module with 1411199862
+     0.00ns INFO     cocotb.gpi                                  __init__.py:115  in _initialise_testbench           Running tests with Cocotb v0.5 from /home/abhishek/2014_devel/EDA/cocotb
+     0.00ns INFO     cocotb.regression                         regression.py:123  in initialise                      Found test test_dpram.test_dpram
+     0.00ns INFO     cocotb.regression                         regression.py:194  in execute                         [44m[30mRunning test 1/1:[39m[49m test_dpram
+     0.00ns INFO     ..routine.test_dpram.0x7f10335ae8d0       decorators.py:176  in send                            Starting test: "test_dpram"
+                                                                                                                     Description: Try writing values into the RAM and reading back
+     0.00ns INFO     cocotb.dpram                              test_dpram.py:37   in test_dpram                      Found 32 entry RAM by 16 bits wide
+     0.00ns INFO     cocotb.dpram                              test_dpram.py:42   in test_dpram                      Writing in random values
+LXT2 info: dumpfile dump.lxt opened for output.
+   201.60ns INFO     cocotb.dpram                              test_dpram.py:47   in test_dpram                      Reading back values and checking
+   208.00ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      64284   64284
+   214.40ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      14744   14744
+   220.80ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      64310   64310
+   227.20ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      29669   29669
+   233.60ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      31077   31077
+   240.00ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      13032   13032
+   246.40ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      20197   20197
+   252.80ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      63824   63824
+   259.20ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      9558   9558
+   265.60ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      50869   50869
+   272.00ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      5257   5257
+   278.40ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      19455   19455
+   284.80ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      51907   51907
+   291.20ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      18884   18884
+   297.60ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      51564   51564
+   304.00ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      15784   15784
+   310.40ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      10006   10006
+   316.80ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      55518   55518
+   323.20ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      23016   23016
+   329.60ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      9818   9818
+   336.00ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      42937   42937
+   342.40ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      7857   7857
+   348.80ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      34522   34522
+   355.20ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      44744   44744
+   361.60ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      14594   14594
+   368.00ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      3968   3968
+   374.40ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      7212   7212
+   380.80ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      45810   45810
+   387.20ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      14419   14419
+   393.60ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      38065   38065
+   400.00ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      41206   41206
+   406.40ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      14909   14909
+   406.40ns INFO     cocotb.dpram                              test_dpram.py:54   in test_dpram                      RAM contents OK
+   406.40ns INFO     cocotb.regression                         regression.py:156  in handle_result                   Test Passed: test_dpram
+   406.40ns INFO     cocotb.regression                         regression.py:132  in tear_down                       Passed 1 tests (0 skipped)
+   406.40ns INFO     cocotb.regression                         regression.py:133  in tear_down                       Shutting down...
 make[1]: Leaving directory '/home/abhishek/2014_devel/EDA/fifo/testbench/dp_ram'
-/home/abhishek/2014_devel/EDA/cocotb/makefiles/Makefile.sim:71: recipe for target 'sim' failed
-make: *** [sim] Error 2
