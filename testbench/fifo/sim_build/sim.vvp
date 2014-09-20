@@ -1,0 +1,166 @@
+#! /usr/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x26fd340 .scope module, "fifo" "fifo" 2 1;
+ .timescale 0 0;
+P_0x26fc2c8 .param/l "ADDR" 2 12, +C4<0101>;
+P_0x26fc2f0 .param/l "DATA" 2 11, +C4<010000>;
+v0x2738020_0 .var "Address_In", 4 0;
+v0x27380c0_0 .var "Address_Out", 4 0;
+v0x2738170_0 .var "Diff", 4 0;
+v0x27381f0_0 .net "clK", 0 0, C4<z>; 0 drivers
+v0x27382d0_0 .net "fifo_IN", 15 0, C4<zzzzzzzzzzzzzzzz>; 0 drivers
+v0x2738380_0 .net "fifo_OUT", 15 0, v0x2737e80_0; 1 drivers
+v0x2738400_0 .net "fifo_RD", 0 0, C4<z>; 0 drivers
+v0x2738480_0 .net "fifo_WR", 0 0, C4<z>; 0 drivers
+v0x2738530_0 .net "rsT", 0 0, C4<z>; 0 drivers
+v0x27385b0_0 .net "statuS", 1 0, L_0x27386c0; 1 drivers
+L_0x27386c0 .part v0x2738170_0, 0, 2;
+S_0x2722e20 .scope module, "Fifomem" "dpram" 2 29, 3 1, S_0x26fd340;
+ .timescale 0 0;
+P_0x27253e8 .param/l "ADDR" 3 16, +C4<0101>;
+P_0x2725410 .param/l "DATA" 3 15, +C4<010000>;
+v0x2722f10 .array "Memory", 31 0, 15 0;
+v0x2722f90_0 .net "a_port_ADDR", 4 0, v0x2738020_0; 1 drivers
+v0x2737a20_0 .alias "a_port_WR", 0 0, v0x2738480_0;
+v0x2737ac0_0 .alias "a_port_data_IN", 15 0, v0x27382d0_0;
+v0x2737b70_0 .var "a_port_data_OUT", 15 0;
+v0x2737c10_0 .net "b_port_ADDR", 4 0, v0x27380c0_0; 1 drivers
+v0x2737cf0_0 .net "b_port_WR", 0 0, C4<0>; 1 drivers
+v0x2737d90_0 .net "b_port_data_IN", 15 0, C4<zzzzzzzzzzzzzzzz>; 0 drivers
+v0x2737e80_0 .var "b_port_data_OUT", 15 0;
+v0x2737f20_0 .alias "clK", 0 0, v0x27381f0_0;
+E_0x26fde60 .event posedge, v0x2737f20_0;
+    .scope S_0x2722e20;
+T_0 ;
+    %vpi_call 3 31 "$dumpfile", "dump.lxt";
+    %vpi_call 3 32 "$dumpvars";
+    %end;
+    .thread T_0;
+    .scope S_0x2722e20;
+T_1 ;
+    %wait E_0x26fde60;
+    %load/v 8, v0x2737a20_0, 1;
+    %jmp/0xz  T_1.0, 8;
+    %load/v 8, v0x2737ac0_0, 16;
+    %ix/getv 3, v0x2722f90_0;
+    %jmp/1 t_0, 4;
+    %ix/load 0, 16, 0; word width
+    %ix/load 1, 0, 0; part off
+    %assign/av v0x2722f10, 0, 8;
+t_0 ;
+T_1.0 ;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_0x2722e20;
+T_2 ;
+    %wait E_0x26fde60;
+    %load/v 8, v0x2737cf0_0, 1;
+    %jmp/0xz  T_2.0, 8;
+    %load/v 8, v0x2737d90_0, 16;
+    %ix/getv 3, v0x2737c10_0;
+    %jmp/1 t_1, 4;
+    %ix/load 0, 16, 0; word width
+    %ix/load 1, 0, 0; part off
+    %assign/av v0x2722f10, 0, 8;
+t_1 ;
+T_2.0 ;
+    %jmp T_2;
+    .thread T_2;
+    .scope S_0x2722e20;
+T_3 ;
+    %wait E_0x26fde60;
+    %ix/getv 3, v0x2722f90_0;
+    %load/av 8, v0x2722f10, 16;
+    %ix/load 0, 16, 0;
+    %assign/v0 v0x2737b70_0, 0, 8;
+    %ix/getv 3, v0x2737c10_0;
+    %load/av 8, v0x2722f10, 16;
+    %ix/load 0, 16, 0;
+    %assign/v0 v0x2737e80_0, 0, 8;
+    %jmp T_3;
+    .thread T_3;
+    .scope S_0x26fd340;
+T_4 ;
+    %vpi_call 2 49 "$dumpfile", "dump.lxt";
+    %vpi_call 2 50 "$dumpvars";
+    %end;
+    .thread T_4;
+    .scope S_0x26fd340;
+T_5 ;
+    %ix/load 0, 5, 0;
+    %assign/v0 v0x27380c0_0, 0, 0;
+    %ix/load 0, 5, 0;
+    %assign/v0 v0x2738020_0, 0, 0;
+    %ix/load 0, 5, 0;
+    %assign/v0 v0x2738170_0, 0, 0;
+    %end;
+    .thread T_5;
+    .scope S_0x26fd340;
+T_6 ;
+    %wait E_0x26fde60;
+    %load/v 8, v0x2738530_0, 1;
+    %jmp/0xz  T_6.0, 8;
+    %ix/load 0, 5, 0;
+    %assign/v0 v0x27380c0_0, 0, 0;
+    %ix/load 0, 5, 0;
+    %assign/v0 v0x2738020_0, 0, 0;
+    %ix/load 0, 5, 0;
+    %assign/v0 v0x2738170_0, 0, 0;
+T_6.0 ;
+    %load/v 8, v0x2738480_0, 1;
+    %load/v 9, v0x2738400_0, 1;
+    %and 8, 9, 1;
+    %jmp/0xz  T_6.2, 8;
+    %load/v 8, v0x2738020_0, 5;
+    %mov 13, 0, 27;
+    %addi 8, 1, 32;
+    %ix/load 0, 5, 0;
+    %assign/v0 v0x2738020_0, 0, 8;
+    %load/v 8, v0x27380c0_0, 5;
+    %mov 13, 0, 27;
+    %addi 8, 1, 32;
+    %ix/load 0, 5, 0;
+    %assign/v0 v0x27380c0_0, 0, 8;
+    %jmp T_6.3;
+T_6.2 ;
+    %load/v 8, v0x2738480_0, 1;
+    %jmp/0xz  T_6.4, 8;
+    %load/v 8, v0x2738020_0, 5;
+    %mov 13, 0, 27;
+    %addi 8, 1, 32;
+    %ix/load 0, 5, 0;
+    %assign/v0 v0x2738020_0, 0, 8;
+    %load/v 8, v0x2738170_0, 5;
+    %mov 13, 0, 27;
+    %addi 8, 1, 32;
+    %ix/load 0, 5, 0;
+    %assign/v0 v0x2738170_0, 0, 8;
+    %jmp T_6.5;
+T_6.4 ;
+    %load/v 8, v0x2738400_0, 1;
+    %jmp/0xz  T_6.6, 8;
+    %load/v 8, v0x27380c0_0, 5;
+    %mov 13, 0, 27;
+    %addi 8, 1, 32;
+    %ix/load 0, 5, 0;
+    %assign/v0 v0x27380c0_0, 0, 8;
+    %load/v 8, v0x2738170_0, 5;
+    %mov 13, 0, 27;
+    %subi 8, 1, 32;
+    %ix/load 0, 5, 0;
+    %assign/v0 v0x2738170_0, 0, 8;
+T_6.6 ;
+T_6.5 ;
+T_6.3 ;
+    %jmp T_6;
+    .thread T_6;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "/home/abhishek/2014_devel/EDA/fifo/testbench/fifo/../../hdl/fifo.v";
+    "/home/abhishek/2014_devel/EDA/fifo/testbench/fifo/../../hdl/dpram.v";

@@ -1,0 +1,58 @@
+make results.xml
+make[1]: Entering directory '/home/abhishek/2014_devel/EDA/fifo/testbench/fifo'
+PYTHONPATH=/home/abhishek/2014_devel/EDA/cocotb/build/libs/x86_64:/home/abhishek/2014_devel/EDA/cocotb:/home/abhishek/2014_devel/EDA/fifo/testbench/fifo: LD_LIBRARY_PATH=/home/abhishek/2014_devel/EDA/cocotb/build/libs/x86_64: MODULE=test_fifo  \
+        TESTCASE= TOPLEVEL=fifo \
+        vvp -M /home/abhishek/2014_devel/EDA/cocotb/build/libs/x86_64 -m gpivpi sim_build/sim.vvp -lxt2  
+     0.00ns INFO     cocotb.gpi                                  gpi_embed.c:205  in embed_sim_init                  Running on Icarus Verilog version 0.9.7 
+     0.00ns INFO     cocotb.gpi                                  gpi_embed.c:206  in embed_sim_init                  Python interpreter initialised and cocotb loaded!
+     0.00ns INFO     cocotb.gpi                                  __init__.py:101  in _initialise_testbench           Seeding Python random module with 1411212110
+     0.00ns INFO     cocotb.gpi                                  __init__.py:115  in _initialise_testbench           Running tests with Cocotb v0.5 from /home/abhishek/2014_devel/EDA/cocotb
+     0.00ns INFO     cocotb.regression                         regression.py:123  in initialise                      Found test test_fifo.test_fifo
+     0.00ns INFO     cocotb.regression                         regression.py:194  in execute                         [44m[30mRunning test 1/1:[39m[49m test_fifo
+     0.00ns INFO     ..oroutine.test_fifo.0x7f5032b96b10       decorators.py:176  in send                            Starting test: "test_fifo"
+                                                                                                                     Description: Try writing values into the FIFO and reading back
+     0.00ns INFO     cocotb.fifo                                test_fifo.py:43   in test_fifo                       Found 32 entry RAM by 16 bits wide
+     0.00ns INFO     cocotb.fifo                                test_fifo.py:48   in test_fifo                       Writing in random values
+LXT2 info: dumpfile dump.lxt opened for output.
+LXT2 warning: /home/abhishek/2014_devel/EDA/fifo/testbench/fifo $dumpfile called after $dumpvars started,
+                                                                using existing file (dump.lxt).
+LXT2 warning: ignoring signals in previously scanned scope fifo
+LXT2 warning: ignoring signals in previously scanned scope fifo.Fifomem
+    99.20ns INFO     cocotb.fifo                                test_fifo.py:53   in test_fifo                       Reading back values and checking
+   102.40ns INFO     cocotb.fifo                                test_fifo.py:56   in test_fifo                       4AE5   4AE5
+   105.60ns INFO     cocotb.fifo                                test_fifo.py:56   in test_fifo                       23D6   23D6
+   108.80ns INFO     cocotb.fifo                                test_fifo.py:56   in test_fifo                       FBD3   FBD3
+   112.00ns INFO     cocotb.fifo                                test_fifo.py:56   in test_fifo                       C5B6   C5B6
+   115.20ns INFO     cocotb.fifo                                test_fifo.py:56   in test_fifo                       6114   6114
+   118.40ns INFO     cocotb.fifo                                test_fifo.py:56   in test_fifo                       84FF   84FF
+   121.60ns INFO     cocotb.fifo                                test_fifo.py:56   in test_fifo                       B6A6   B6A6
+   124.80ns INFO     cocotb.fifo                                test_fifo.py:56   in test_fifo                       DB63   DB63
+   128.00ns INFO     cocotb.fifo                                test_fifo.py:56   in test_fifo                       854A   854A
+   131.20ns INFO     cocotb.fifo                                test_fifo.py:56   in test_fifo                       A362   A362
+   134.40ns INFO     cocotb.fifo                                test_fifo.py:56   in test_fifo                       D751   D751
+   137.60ns INFO     cocotb.fifo                                test_fifo.py:56   in test_fifo                       B932   B932
+   140.80ns INFO     cocotb.fifo                                test_fifo.py:56   in test_fifo                       DD19   DD19
+   144.00ns INFO     cocotb.fifo                                test_fifo.py:56   in test_fifo                       F17B   F17B
+   147.20ns INFO     cocotb.fifo                                test_fifo.py:56   in test_fifo                       793A   793A
+   150.40ns INFO     cocotb.fifo                                test_fifo.py:56   in test_fifo                       CB89   CB89
+   153.60ns INFO     cocotb.fifo                                test_fifo.py:56   in test_fifo                       7DB2   7DB2
+   156.80ns INFO     cocotb.fifo                                test_fifo.py:56   in test_fifo                       F600   F600
+   160.00ns INFO     cocotb.fifo                                test_fifo.py:56   in test_fifo                       F3C8   F3C8
+   163.20ns INFO     cocotb.fifo                                test_fifo.py:56   in test_fifo                       80EE   80EE
+   166.40ns INFO     cocotb.fifo                                test_fifo.py:56   in test_fifo                       A338   A338
+   169.60ns INFO     cocotb.fifo                                test_fifo.py:56   in test_fifo                       918E   918E
+   172.80ns INFO     cocotb.fifo                                test_fifo.py:56   in test_fifo                       25A7   25A7
+   176.00ns INFO     cocotb.fifo                                test_fifo.py:56   in test_fifo                       60FB   60FB
+   179.20ns INFO     cocotb.fifo                                test_fifo.py:56   in test_fifo                       9EBD   9EBD
+   182.40ns INFO     cocotb.fifo                                test_fifo.py:56   in test_fifo                       4A91   4A91
+   185.60ns INFO     cocotb.fifo                                test_fifo.py:56   in test_fifo                       7BEC   7BEC
+   188.80ns INFO     cocotb.fifo                                test_fifo.py:56   in test_fifo                       4EA8   4EA8
+   192.00ns INFO     cocotb.fifo                                test_fifo.py:56   in test_fifo                       CB79   CB79
+   195.20ns INFO     cocotb.fifo                                test_fifo.py:56   in test_fifo                       9B4F   9B4F
+   198.40ns INFO     cocotb.fifo                                test_fifo.py:56   in test_fifo                       6F9C   6F9C
+   201.60ns INFO     cocotb.fifo                                test_fifo.py:56   in test_fifo                       E477   E477
+   201.60ns INFO     cocotb.fifo                                test_fifo.py:60   in test_fifo                       RAM contents OK
+   201.60ns INFO     cocotb.regression                         regression.py:156  in handle_result                   Test Passed: test_fifo
+   201.60ns INFO     cocotb.regression                         regression.py:132  in tear_down                       Passed 1 tests (0 skipped)
+   201.60ns INFO     cocotb.regression                         regression.py:133  in tear_down                       Shutting down...
+make[1]: Leaving directory '/home/abhishek/2014_devel/EDA/fifo/testbench/fifo'
