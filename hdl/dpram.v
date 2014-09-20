@@ -27,6 +27,11 @@ module dpram (
     input  wire [DATA-1:0]   b_port_data_IN;
     output reg  [DATA-1:0]   b_port_data_OUT;
     
+    initial begin
+        $dumpfile("dump.lxt");
+        $dumpvars(0,test);
+    end
+    
     // Memory as multi-dimensional array
     reg [DATA-1:0] Memory [0:2**ADDR-1];
     
