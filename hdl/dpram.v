@@ -10,7 +10,7 @@ module dpram (
     b_port_ADDR,
     b_port_data_IN,
     b_port_data_OUT
-);
+    );
 
     parameter DATA = 16;
     parameter ADDR = 5;    input clK;
@@ -26,6 +26,7 @@ module dpram (
     input  [ADDR-1:0]   b_port_ADDR;
     input  [DATA-1:0]   b_port_data_IN;
     output [DATA-1:0]   b_port_data_OUT;
+    
     // Memory as multi-dimensional array
     reg [DATA-1:0] Memory [0:2**ADDR-1];
     
