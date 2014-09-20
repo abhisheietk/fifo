@@ -1,6 +1,8 @@
 module dpram (
     clK, 
     fifo_IN,
+    fifo_WR,
+    fifo_RD,
     fifo_OUT
     );
 
