@@ -37,8 +37,7 @@ def test_dpram(dut):
     dut.log.info("Found %d entry RAM by %d bits wide" % (depth, width))
 
     # Set up independent read/write clocks
-    cocotb.fork(Clock(dut.clk_write, 3200).start())
-    cocotb.fork(Clock(dut.clk_read, 5000).start())
+    cocotb.fork(Clock(dut.clK, 3200).start())
     
     dut.log.info("Writing in random values")
     for i in xrange(depth):
