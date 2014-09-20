@@ -9,7 +9,7 @@ from cocotb.result import TestFailure, ReturnValue
 @cocotb.coroutine
 def write_ram(dut, address, value):
     """This coroutine performs a write of the RAM"""
-    yield RisingEdge(dut.clK)                  # Synchronise to the read clock
+    #yield RisingEdge(dut.clK)                  # Synchronise to the read clock
     dut.a_port_ADDR = address                  # Drive the values
     dut.a_port_data_IN    = value
     dut.a_port_WR  = 1
