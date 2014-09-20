@@ -29,33 +29,6 @@ module dpram (
     
     initial begin
         $dumpfile("dump.lxt");
-        $dumpvars(0,test);
-    end
-    
-    // Memory as multi-dimensional array
-    reg [DATA-1:0] Memory [0:2**ADDR-1];
-    
-    // Write data to Memory
-    always @(posedge clK) begin
-        if (a_port_WR) begin
-            Memory[a_port_ADDR] <= a_port_data_IN;
-        end
-    end
-    always @(posedge clK) begin
-        if (b_port_WR) begin
-            Memory[b_port_ADDR] <= b_port_data_IN;
-        end
-    end
-    
-    // Read data from memory
-    always @(posedge clK) begin
-        a_port_data_OUT <= Memory[a_port_ADDR];
-        b_port_data_OUT <= Memory[b_port_ADDR];
-    end
-
-endmodule
-    initial begin
-        $dumpfile("dump.lxt");
         $dumpvars();
     end
     
