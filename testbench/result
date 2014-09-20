@@ -1,0 +1,21 @@
+make results.xml
+make[1]: Entering directory '/home/abhishek/2014_devel/EDA/fifo/testbench'
+PYTHONPATH=/home/abhishek/2014_devel/EDA/cocotb/build/libs/x86_64:/home/abhishek/2014_devel/EDA/cocotb:/home/abhishek/2014_devel/EDA/fifo/testbench: LD_LIBRARY_PATH=/home/abhishek/2014_devel/EDA/cocotb/build/libs/x86_64: MODULE=test_ram  \
+        TESTCASE= TOPLEVEL=ram \
+        vvp -M /home/abhishek/2014_devel/EDA/cocotb/build/libs/x86_64 -m gpivpi sim_build/sim.vvp   
+     0.00ns INFO     cocotb.gpi                                  gpi_embed.c:205  in embed_sim_init                  Running on Icarus Verilog version 0.9.7 
+     0.00ns INFO     cocotb.gpi                                  gpi_embed.c:206  in embed_sim_init                  Python interpreter initialised and cocotb loaded!
+     0.00ns INFO     cocotb.gpi                                  __init__.py:101  in _initialise_testbench           Seeding Python random module with 1411190149
+     0.00ns INFO     cocotb.gpi                                  __init__.py:115  in _initialise_testbench           Running tests with Cocotb v0.5 from /home/abhishek/2014_devel/EDA/cocotb
+     0.00ns INFO     cocotb.regression                         regression.py:123  in initialise                      Found test test_ram.test_ram
+     0.00ns INFO     cocotb.regression                         regression.py:194  in execute                         [44m[30mRunning test 1/1:[39m[49m test_ram
+     0.00ns INFO     ..coroutine.test_ram.0x7f029c6288d0       decorators.py:176  in send                            Starting test: "test_ram"
+                                                                                                                     Description: Try writing values into the RAM and reading back
+     0.00ns INFO     cocotb.ram                                  test_ram.py:39   in test_ram                        Found 32 entry RAM by 16 bits wide
+     0.00ns INFO     cocotb.ram                                  test_ram.py:45   in test_ram                        Writing in random values
+   201.60ns INFO     cocotb.ram                                  test_ram.py:50   in test_ram                        Reading back values and checking
+   520.00ns INFO     cocotb.ram                                  test_ram.py:56   in test_ram                        RAM contents OK
+   520.00ns INFO     cocotb.regression                         regression.py:156  in handle_result                   Test Passed: test_ram
+   520.00ns INFO     cocotb.regression                         regression.py:132  in tear_down                       Passed 1 tests (0 skipped)
+   520.00ns INFO     cocotb.regression                         regression.py:133  in tear_down                       Shutting down...
+make[1]: Leaving directory '/home/abhishek/2014_devel/EDA/fifo/testbench'
