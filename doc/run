@@ -1,1 +1,0 @@
-ipython2 notebook
