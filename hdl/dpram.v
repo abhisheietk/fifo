@@ -27,38 +27,3 @@ module dpram (
     input  wire [DATA-1:0]   b_port_data_IN;
     output reg  [DATA-1:0]   b_port_data_OUT;
     
-    initial begin
-        $dumpfile("dump.lxt");
-        $dumpvars();
-    end
-    
-    // Memory as multi-dimensional array
-    reg [DATA-1:0] Memory [0:2**ADDR-1];
-    
-    // Write data to Memory
-    always @(posedge clK) begin
-        if (a_port_WR) begin
-            Memory[a_port_ADDR] <= a_port_data_IN;
-        end
-    end
-    always @(posedge clK) begin
-        if (b_port_WR) begin
-            Memory[b_port_ADDR] <= b_port_data_IN;
-        end
-    end
-    
-    // Read data from memory
-    always @(posedge clK) begin
-        a_port_data_OUT <= Memory[a_port_ADDR];
-        b_port_data_OUT <= Memory[b_port_ADDR];
-    end
-
-endmodule    input clK;
-    
-    // in fifo
-    input  wire              fifo_WR;
-    input  wire [DATA-1:0]   fifo_IN;
-    
-    // out fifo
-    input  wire              fifo_RD;
-    output wire [DATA-1:0]   fifo_OUT;
