@@ -1,7 +1,8 @@
 make results.xml
 make[1]: Entering directory '/home/abhishek/2014_devel/EDA/fifo/testbench/dp_ram'
-iverilog -o sim_build/sim.vvp -D COCOTB_SIM=1  -lxt2 /home/abhishek/2014_devel/EDA/fifo/testbench/dp_ram/../../hdl/dpram.v
-iverilog: invalid option -- 'l'
+iverilog -o sim_build/sim.vvp -D COCOTB_SIM=1   /home/abhishek/2014_devel/EDA/fifo/testbench/dp_ram/../../hdl/dpram.v
+/home/abhishek/2014_devel/EDA/fifo/testbench/dp_ram/../../hdl/dpram.v:32: error: Unable to bind wire/reg/memory `test' in `dpram'
+1 error(s) during elaboration.
 /home/abhishek/2014_devel/EDA/cocotb/makefiles/simulators/Makefile.icarus:32: recipe for target 'sim_build/sim.vvp' failed
 make[1]: *** [sim_build/sim.vvp] Error 1
 make[1]: Leaving directory '/home/abhishek/2014_devel/EDA/fifo/testbench/dp_ram'
