@@ -47,7 +47,7 @@ def test_dpram(dut):
     dut.log.info("Reading back values and checking")
     for i in xrange(depth):
         value = yield read_ram(dut, i)
-        print value, RAM[i]
+        dut.log.info("%d   %d" % (value, RAM[i]))
         if value != RAM[i]:
             dut.log.error("RAM[%d] expected %d but got %d" % (i, RAM[i], dut.a_port_data_OUT.value.value))
             raise TestFailure("RAM contents incorrect")
