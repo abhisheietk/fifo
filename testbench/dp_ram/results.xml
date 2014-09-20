@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <testsuites name="results">
   <testsuite name="all" package="all" tests="0">
-    <testcase classname="test_dpram" name="test_dpram" time="0.0050640106201171875">
-      <failure stderr="" stdout="'dpram contains no object named clk_write'" />
+    <testcase classname="test_dpram" name="test_dpram" time="0.036649227142333984">
+      <failure stderr="" stdout="'dpram contains no object named data_read'" />
     </testcase>
   </testsuite>
 </testsuites>

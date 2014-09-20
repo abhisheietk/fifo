@@ -1,35 +1,33 @@
 make results.xml
 make[1]: Entering directory '/home/abhishek/2014_devel/EDA/fifo/testbench/dp_ram'
-mkdir -p sim_build
-iverilog -o sim_build/sim.vvp -D COCOTB_SIM=1   /home/abhishek/2014_devel/EDA/fifo/testbench/dp_ram/../../hdl/dpram.v
 PYTHONPATH=/home/abhishek/2014_devel/EDA/cocotb/build/libs/x86_64:/home/abhishek/2014_devel/EDA/cocotb:/home/abhishek/2014_devel/EDA/fifo/testbench/dp_ram: LD_LIBRARY_PATH=/home/abhishek/2014_devel/EDA/cocotb/build/libs/x86_64: MODULE=test_dpram  \
         TESTCASE= TOPLEVEL=dpram \
         vvp -M /home/abhishek/2014_devel/EDA/cocotb/build/libs/x86_64 -m gpivpi sim_build/sim.vvp   
      0.00ns INFO     cocotb.gpi                                  gpi_embed.c:205  in embed_sim_init                  Running on Icarus Verilog version 0.9.7 
      0.00ns INFO     cocotb.gpi                                  gpi_embed.c:206  in embed_sim_init                  Python interpreter initialised and cocotb loaded!
-     0.00ns INFO     cocotb.gpi                                  __init__.py:101  in _initialise_testbench           Seeding Python random module with 1411197936
+     0.00ns INFO     cocotb.gpi                                  __init__.py:101  in _initialise_testbench           Seeding Python random module with 1411198006
      0.00ns INFO     cocotb.gpi                                  __init__.py:115  in _initialise_testbench           Running tests with Cocotb v0.5 from /home/abhishek/2014_devel/EDA/cocotb
      0.00ns INFO     cocotb.regression                         regression.py:123  in initialise                      Found test test_dpram.test_dpram
      0.00ns INFO     cocotb.regression                         regression.py:194  in execute                         [44m[30mRunning test 1/1:[39m[49m test_dpram
-     0.00ns INFO     ..routine.test_dpram.0x7f8448f1b8d0       decorators.py:176  in send                            Starting test: "test_dpram"
+     0.00ns INFO     ..routine.test_dpram.0x7f20183a48d0       decorators.py:176  in send                            Starting test: "test_dpram"
                                                                                                                      Description: Try writing values into the RAM and reading back
      0.00ns INFO     cocotb.dpram                              test_dpram.py:37   in test_dpram                      Found 32 entry RAM by 16 bits wide
-     0.00ns ERROR    cocotb.dpram                                  handle.py:88   in _raise_testerror                dpram contains no object named clk_write
-                                                                                                                       File "/home/abhishek/2014_devel/EDA/cocotb/cocotb/__init__.py", line 135, in _initialise_testbench
-                                                                                                                         regression.execute()
-                                                                                                                       File "/home/abhishek/2014_devel/EDA/cocotb/cocotb/regression.py", line 196, in execute
-                                                                                                                         test = cocotb.scheduler.add(self._running_test)
-                                                                                                                       File "/home/abhishek/2014_devel/EDA/cocotb/cocotb/scheduler.py", line 430, in add
-                                                                                                                         self.schedule(coroutine)
+     0.00ns INFO     cocotb.dpram                              test_dpram.py:42   in test_dpram                      Writing in random values
+   201.60ns INFO     cocotb.dpram                              test_dpram.py:47   in test_dpram                      Reading back values and checking
+   208.00ns ERROR    cocotb.dpram                                  handle.py:88   in _raise_testerror                dpram contains no object named data_read
+                                                                                                                       File "/home/abhishek/2014_devel/EDA/cocotb/cocotb/scheduler.py", line 340, in react
+                                                                                                                         self.react(self._pending_triggers.pop(0), depth=depth+1)
+                                                                                                                       File "/home/abhishek/2014_devel/EDA/cocotb/cocotb/scheduler.py", line 332, in react
+                                                                                                                         self.schedule(coro, trigger=trigger)
                                                                                                                        File "/home/abhishek/2014_devel/EDA/cocotb/cocotb/scheduler.py", line 459, in schedule
                                                                                                                          result = coroutine.send(sendval)
                                                                                                                        File "/home/abhishek/2014_devel/EDA/cocotb/cocotb/decorators.py", line 182, in send
                                                                                                                          return self._coro.send(value)
-                                                                                                                       File "/home/abhishek/2014_devel/EDA/fifo/testbench/dp_ram/test_dpram.py", line 40, in test_dpram
-                                                                                                                         cocotb.fork(Clock(dut.clk_write, 3200).start())
+                                                                                                                       File "/home/abhishek/2014_devel/EDA/fifo/testbench/dp_ram/test_dpram.py", line 51, in test_dpram
+                                                                                                                         dut.log.error("RAM[%d] expected %d but got %d" % (i, RAM[i], dut.data_read.value.value))
                                                                                                                      
-     0.00ns INFO     ..routine.test_dpram.0x7f8448f1b8d0       decorators.py:187  in send                            dpram contains no object named clk_write
-     0.00ns ERROR    cocotb.regression                         regression.py:180  in handle_result                   Test Failed: test_dpram (result was TestError)
-     0.00ns ERROR    cocotb.regression                         regression.py:129  in tear_down                       Failed 1 out of 1 tests (0 skipped)
-     0.00ns INFO     cocotb.regression                         regression.py:133  in tear_down                       Shutting down...
+   208.00ns INFO     ..routine.test_dpram.0x7f20183a48d0       decorators.py:187  in send                            dpram contains no object named data_read
+   208.00ns ERROR    cocotb.regression                         regression.py:180  in handle_result                   Test Failed: test_dpram (result was TestError)
+   208.00ns ERROR    cocotb.regression                         regression.py:129  in tear_down                       Failed 1 out of 1 tests (0 skipped)
+   208.00ns INFO     cocotb.regression                         regression.py:133  in tear_down                       Shutting down...
 make[1]: Leaving directory '/home/abhishek/2014_devel/EDA/fifo/testbench/dp_ram'
