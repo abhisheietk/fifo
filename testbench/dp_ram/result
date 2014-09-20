@@ -5,47 +5,47 @@ PYTHONPATH=/home/abhishek/2014_devel/EDA/cocotb/build/libs/x86_64:/home/abhishek
         vvp -M /home/abhishek/2014_devel/EDA/cocotb/build/libs/x86_64 -m gpivpi sim_build/sim.vvp   
      0.00ns INFO     cocotb.gpi                                  gpi_embed.c:205  in embed_sim_init                  Running on Icarus Verilog version 0.9.7 
      0.00ns INFO     cocotb.gpi                                  gpi_embed.c:206  in embed_sim_init                  Python interpreter initialised and cocotb loaded!
-     0.00ns INFO     cocotb.gpi                                  __init__.py:101  in _initialise_testbench           Seeding Python random module with 1411198388
+     0.00ns INFO     cocotb.gpi                                  __init__.py:101  in _initialise_testbench           Seeding Python random module with 1411199314
      0.00ns INFO     cocotb.gpi                                  __init__.py:115  in _initialise_testbench           Running tests with Cocotb v0.5 from /home/abhishek/2014_devel/EDA/cocotb
      0.00ns INFO     cocotb.regression                         regression.py:123  in initialise                      Found test test_dpram.test_dpram
      0.00ns INFO     cocotb.regression                         regression.py:194  in execute                         [44m[30mRunning test 1/1:[39m[49m test_dpram
-     0.00ns INFO     ..routine.test_dpram.0x7fe2d0e4b8d0       decorators.py:176  in send                            Starting test: "test_dpram"
+     0.00ns INFO     ..routine.test_dpram.0x7fe50eb3c8d0       decorators.py:176  in send                            Starting test: "test_dpram"
                                                                                                                      Description: Try writing values into the RAM and reading back
      0.00ns INFO     cocotb.dpram                              test_dpram.py:37   in test_dpram                      Found 32 entry RAM by 16 bits wide
      0.00ns INFO     cocotb.dpram                              test_dpram.py:42   in test_dpram                      Writing in random values
    201.60ns INFO     cocotb.dpram                              test_dpram.py:47   in test_dpram                      Reading back values and checking
-   208.00ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      61452   61452
-   214.40ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      49734   49734
-   220.80ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      9132   9132
-   227.20ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      64646   64646
-   233.60ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      64796   64796
-   240.00ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      19562   19562
-   246.40ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      9830   9830
-   252.80ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      5512   5512
-   259.20ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      47719   47719
-   265.60ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      63963   63963
-   272.00ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      49088   49088
-   278.40ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      62990   62990
-   284.80ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      25400   25400
-   291.20ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      59238   59238
-   297.60ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      63943   63943
-   304.00ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      61532   61532
-   310.40ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      24628   24628
-   316.80ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      33757   33757
-   323.20ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      42117   42117
-   329.60ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      62318   62318
-   336.00ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      6078   6078
-   342.40ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      61303   61303
-   348.80ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      29634   29634
-   355.20ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      54602   54602
-   361.60ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      12075   12075
-   368.00ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      35237   35237
-   374.40ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      63356   63356
-   380.80ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      40760   40760
-   387.20ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      17212   17212
-   393.60ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      45518   45518
-   400.00ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      52997   52997
-   406.40ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      34374   34374
+   208.00ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      51171   51171
+   214.40ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      11032   11032
+   220.80ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      28273   28273
+   227.20ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      15117   15117
+   233.60ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      48218   48218
+   240.00ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      48541   48541
+   246.40ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      58902   58902
+   252.80ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      23193   23193
+   259.20ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      27553   27553
+   265.60ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      49577   49577
+   272.00ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      39066   39066
+   278.40ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      31819   31819
+   284.80ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      26115   26115
+   291.20ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      8881   8881
+   297.60ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      54957   54957
+   304.00ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      52656   52656
+   310.40ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      11407   11407
+   316.80ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      3396   3396
+   323.20ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      25173   25173
+   329.60ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      52949   52949
+   336.00ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      45941   45941
+   342.40ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      53187   53187
+   348.80ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      28118   28118
+   355.20ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      56872   56872
+   361.60ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      44538   44538
+   368.00ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      7019   7019
+   374.40ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      36759   36759
+   380.80ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      62994   62994
+   387.20ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      20106   20106
+   393.60ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      37625   37625
+   400.00ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      62411   62411
+   406.40ns INFO     cocotb.dpram                              test_dpram.py:50   in test_dpram                      44069   44069
    406.40ns INFO     cocotb.dpram                              test_dpram.py:54   in test_dpram                      RAM contents OK
    406.40ns INFO     cocotb.regression                         regression.py:156  in handle_result                   Test Passed: test_dpram
    406.40ns INFO     cocotb.regression                         regression.py:132  in tear_down                       Passed 1 tests (0 skipped)
